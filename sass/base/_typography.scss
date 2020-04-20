@@ -1,0 +1,148 @@
+@import "../abstracts/variables";
+
+body {
+  font-family: 'Lato', sans-serif;
+  font-weight: 400;
+  /*font-size: 1.6rem;*/
+  line-height: 1.7;
+  color: $grey;
+  padding: 3rem;
+}
+.heading-primary {
+  color: $white;
+  text-transform: uppercase;
+  backface-visibility: hidden;
+  margin-bottom: 6rem;
+
+
+  &--main {
+    display: block;
+    font-size: 6rem;
+    font-weight: 400;
+    letter-spacing: 3.5rem;
+    animation-name: moveInLeft;
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
+    /*animation-iteration-count: 3;*/
+    /*animation-delay: 3s;*/
+  }
+
+  &--sub {
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 1.74rem;
+    animation-name: moveInRight;
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
+  }
+}
+
+.heading-tertiary {
+  font-size: 1.4rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.paragraph {
+  font-size: 1rem;
+
+  &:not(:last-child) {
+    margin-bottom: 5rem;
+  }
+}
+
+.section-features {
+  background-image: linear-gradient(
+                  to right bottom,
+                  rgba(126,213,111,0.8),
+                  rgba(40,180,131,0.8)),
+  url(../../img/nat-4.jpg);
+
+  //&-features {
+  //  background-image: linear-gradient(
+  //                  to right bottom,
+  //                  rgba(126,213,111,0.8),
+  //                  rgba(40,180,131,0.8)),
+  //  url(../../img/nat-4.jpg);
+  //}
+  //
+  //&-review {
+  //  background-image: linear-gradient(
+  //                  to right bottom,
+  //                  rgba(126,213,111,0.8),
+  //                  rgba(40,180,131,0.8)),
+  //  url(../../img/nat-5.jpg);
+  //  margin-top: 5rem;
+  //}
+
+  text-align: center;
+  background-position: top;
+  background-color: $color-primary;
+  padding: 20rem;
+
+  position: relative;
+  clip-path: polygon(0% 9%, 100% 0%, 100% 90%, 0% 100%);
+  background-size: cover;
+
+  &__heading {
+    font-size: 1.4rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+
+  &__paragraph {
+    font-size: 1rem;
+    font-weight: 400;
+  }
+}
+
+
+.section-tours {
+  height: 100vh;
+  text-align: center;
+  background-color: $color-grid;
+  background-size: cover;
+  transform: scale(-50%, -50%);
+
+  &__heading {
+    font-size: 1.4rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+  }
+
+  &__paragraph {
+    font-size: 1rem;
+    font-weight: 400;
+  }
+}
+
+.section-review {
+  height: 100vh;
+  margin-top: 7rem;
+  background-position: top;
+  background-color: $color-grey-dark;
+
+
+  padding: 20rem;
+  position: relative;
+  background-size: cover;
+
+  &__heading {
+    position: absolute;
+    top: 5rem;
+    transform: translate(40%, -50%);
+    left: 10rem;
+    font-size: 2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+  &__paragraph {
+    font-size: 1rem;
+    font-weight: 400;
+  }
+}

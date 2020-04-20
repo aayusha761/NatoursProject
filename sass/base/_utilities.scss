@@ -1,0 +1,28 @@
+@import "../abstracts/variables";
+
+.u-design {
+  text-align: center;
+}
+
+.u-margin-bottom-6 {
+  margin: 6rem;
+}
+
+.icon {
+  width: 10px;
+  font-size: 5rem;
+
+  color: $color-primary;
+  -webkit-background-clip: text;
+}
+
+.ul {
+  list-style: none;
+  width: 80%;
+  margin: 0 auto;
+
+  li {
+    text-align: center;
+    padding: 1rem;
+  }
+}

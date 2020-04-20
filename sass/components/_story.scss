@@ -1,0 +1,27 @@
+.story {
+  width: 75%;
+  margin: 0 auto;
+  border-radius: 3px;
+  background-color: white;
+  padding: 4rem;
+  box-shadow: 0 3rem 6rem rgba(black,0.2);
+  transform: skew(-12deg);
+
+  &__shape {
+    margin-right: 3px;
+    width: 8rem;
+    height: 8rem;
+    background-color: green;
+    float: left;
+    -webkit-shape-outside: circle(50% at 50% 50%);
+    shape-outside: circle(50% at 50% 50%);
+    clip-path: circle(50% at 50% 50%);
+    background-image:
+            url('../../img/nat-4.jpg');
+    transform: skew(12deg);
+  }
+
+  &__text {
+    transform: skew(12deg);
+  }
+}
