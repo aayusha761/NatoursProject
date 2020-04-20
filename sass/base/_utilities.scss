@@ -1,5 +1,10 @@
 @import "../abstracts/variables";
 
+.u-center-text {
+  text-align: center;
+  align-items: center;
+}
+
 .u-design {
   text-align: center;
 }
@@ -25,4 +30,21 @@
     text-align: center;
     padding: 1rem;
   }
+}
+
+.footer-menu {
+  position: absolute;
+  margin-top: 10rem;
+  left: 6rem;
+  display: inline-block;
+  border-top: 3px solid rgba(253, 127, 187, 0.99);
+}
+
+.footer-copyright {
+  position: absolute;
+  width: 30rem;
+  margin-top: 10rem;
+  left: 80rem;
+  display: inline-block;
+  border-top: 3px solid rgba(253, 127, 187, 0.99);
 }

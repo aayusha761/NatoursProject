@@ -136,6 +136,14 @@ body {
     font-size: 1rem;
     font-weight: 400; }
 
+.u-center-text {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  text-align: center;
+  align-items: center;
+  transform: translate(-50%, -50%); }
+
 .u-design {
   text-align: center; }
 
@@ -251,6 +259,9 @@ body {
 .btn-text:active {
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
   transform: translateY(0); }
+
+.btn-text-1 {
+  align-items: center; }
 
 .composition {
   position: relative; }
