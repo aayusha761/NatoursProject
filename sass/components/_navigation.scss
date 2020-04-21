@@ -1,0 +1,88 @@
+@import "../abstracts/variables";
+
+.navigation {
+
+  &__checkbox {
+    height: 4rem;
+    width: 7rem;
+    background-color: white;
+    position: fixed;
+    top: 6rem;
+    right: 3rem;
+    z-index: 1000;
+  }
+
+  &__button {
+    height: 7rem;
+    width: 7rem;
+    color: white;
+    border-radius: 50%;
+    position: fixed;
+    top: 8.5rem;
+    right: 4rem;
+    z-index: 1010;
+  }
+
+  &__background {
+    width: 6rem;
+    height: 6rem;
+    border-radius: 50%;
+    position: fixed;
+    top: 6.5rem;
+    right: 6.5rem;
+    background-image: linear-gradient($color-primary-light, $color-primary-dark);
+    z-index: 1000;
+    transition: transform .6s cubic-bezier(0.86, 0, 0.07, 1);
+  }
+
+  &__nav {
+    height: 100vh;
+    position: fixed;
+    top: 20rem;
+    left: 50rem;
+    font-size: 4rem;
+    text-align: center;
+    z-index: 1010;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .6s;
+  }
+
+  &__list {
+    list-style: none;
+  }
+
+  &__item {
+    display: block;
+    color: white;
+  }
+
+  &__checkbox:checked ~ &__background {
+    transform: scale(50);
+  }
+
+  &__checkbox:checked ~ &__nav {
+    opacity: 1;
+    visibility: unset;
+  }
+
+  &__link {
+
+    &:link,
+    &:hover {
+      text-transform: uppercase;
+      text-decoration: none;
+      color: white;
+      z-index: 1010;
+      background-image: linear-gradient(120deg, white 0%, white 50%, transparent 100%);
+      background-size: 220%;
+      //background-size: 220%;
+      transition: all .2s;
+    }
+
+    &:hover {
+      background-position: 100%;
+      color: $color-primary;
+    }
+  }
+}
