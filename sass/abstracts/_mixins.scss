@@ -1,0 +1,13 @@
+@mixin clearflix {
+  &::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+@mixin absCenter {
+  position: absolute;
+  top: 13%;
+  left: 5%;
+}

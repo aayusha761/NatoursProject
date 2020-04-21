@@ -562,7 +562,7 @@ body {
   right: 6.5rem;
   background-image: linear-gradient(#7ed56f, #55c57a);
   z-index: 1000;
-  transition: transform 0.6s cubic-bezier(0.86, 0, 0.07, 1); }
+  transition: transform .6s; }
 
 .navigation__nav {
   height: 100vh;
@@ -603,6 +603,87 @@ body {
   background-position: 100%;
   color: #55c57a; }
 
+.popup {
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.8);
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: all .3s; }
+  .popup:target {
+    opacity: 1;
+    visibility: visible; }
+  .popup__close:link, .popup__close:visited {
+    color: rgba(4, 2, 3, 0.79);
+    position: absolute;
+    top: 2.5rem;
+    right: 4rem;
+    display: inline-block;
+    text-decoration: none;
+    line-height: 1;
+    transition: all .2s;
+    transform: scale(3); }
+  .popup__close:hover {
+    color: #55c57a; }
+  .popup__content {
+    position: absolute;
+    top: 13%;
+    left: 5%;
+    border: 3px solid black;
+    height: 48.5rem;
+    width: 110rem;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.2);
+    display: inline-block;
+    z-index: 9999; }
+  .popup__content-image {
+    width: 50vh;
+    height: 75vh;
+    display: inline-block; }
+    .popup__content-image-1 {
+      height: 37.5vh; }
+    .popup__content-image-2 {
+      height: 37.5vh; }
+  .popup__text {
+    position: absolute;
+    top: 0;
+    left: 32.2rem;
+    width: 75rem;
+    height: 75vh;
+    display: table-cell;
+    vertical-align: middle;
+    padding: 3rem 5rem; }
+    .popup__text-heading {
+      position: absolute;
+      left: 0;
+      top: 6rem;
+      letter-spacing: 3px; }
+      .popup__text-heading-sub {
+        position: absolute;
+        top: 14rem;
+        left: 4.5rem; }
+    .popup__text-paragraph {
+      width: 69.4rem;
+      position: absolute;
+      top: 20rem;
+      left: 4.5rem;
+      -moz-column-count: 2;
+      column-count: 2;
+      column-gap: 4rem;
+      column-rule: 1px solid rgba(253, 127, 187, 0.99);
+      -moz-hyphens: auto;
+      -ms-hyphens: auto;
+      -webkit-hyphens: auto;
+      hyphens: auto; }
+    .popup__text-button {
+      position: absolute;
+      top: 38rem;
+      left: 4.5rem; }
+
 .header {
   height: 95vh;
   background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 131, 0.8)), url(../../img/hero.jpg);
@@ -617,6 +698,9 @@ body {
     height: 100rem; }
   .header__logo {
     height: 3.5rem; }
+  .header__popup-image {
+    height: 100%;
+    width: 100%; }
   .header__logo-1 {
     position: absolute;
     top: 4rem;
