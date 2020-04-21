@@ -1,4 +1,5 @@
 @import "../abstracts/variables";
+@import "../abstracts/mixins";
 
 body {
   font-family: 'Lato', sans-serif;
@@ -6,14 +7,12 @@ body {
   /*font-size: 1.6rem;*/
   line-height: 1.7;
   color: $grey;
-  padding: 3rem;
 }
 .heading-primary {
   color: $white;
   text-transform: uppercase;
   backface-visibility: hidden;
   margin-bottom: 6rem;
-
 
   &--main {
     display: block;
@@ -23,6 +22,11 @@ body {
     animation-name: moveInLeft;
     animation-duration: 1s;
     animation-timing-function: ease-out;
+
+    @include respond(phone) {
+      font-size: 5rem;
+      letter-spacing: 1rem;
+    }
     /*animation-iteration-count: 3;*/
     /*animation-delay: 3s;*/
   }
@@ -35,6 +39,36 @@ body {
     animation-name: moveInRight;
     animation-duration: 1s;
     animation-timing-function: ease-out;
+
+    @include respond(phone) {
+      font-size: 5rem;
+      letter-spacing: .5rem;
+    }
+  }
+}
+
+.heading-secondary {
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  background-image: linear-gradient(to right, $color-primary-light, $color-primary-dark);
+  display: inline-block;
+  margin: 25px;
+  padding: 0 20px;
+  -webkit-background-clip: text;
+  color: transparent;
+
+  @include respond(tab-port) {
+    font-size: 2.5rem;
+  }
+
+  @include respond(phone) {
+    font-size: 2rem;
+  }
+
+  &:hover {
+    transform: skewX(2deg) skewY(2deg);
+    text-shadow: .5rem 1rem 2rem rgba(black, .2);
   }
 }
 
@@ -43,6 +77,13 @@ body {
   font-weight: 700;
   text-transform: uppercase;
   margin-bottom: 10px;
+
+  @include respond(tab-port) {
+    font-size: 1.4rem;
+  }
+  @include respond(phone) {
+    font-size: 1rem;
+  }
 }
 
 .paragraph {
@@ -50,6 +91,13 @@ body {
 
   &:not(:last-child) {
     margin-bottom: 5rem;
+
+    @include respond(tab-port) {
+      margin-bottom: 5rem;
+    }
+    @include respond(phone) {
+      margin-bottom: 2rem;
+    }
   }
 }
 
@@ -59,7 +107,7 @@ body {
                   rgba(126,213,111,0.8),
                   rgba(40,180,131,0.8)),
   url(../../img/nat-4.jpg);
-
+  width: 130rem;
   text-align: center;
   background-position: top;
   background-color: $color-primary;
@@ -84,11 +132,21 @@ body {
 
 
 .section-tours {
-  height: 100vh;
+  width: 130rem;
+  height: 80vh;
   text-align: center;
   background-color: $color-grid;
   background-size: cover;
-  transform: scale(-50%, -50%);
+  position: relative;
+
+  &__card {
+    height: 0;
+  }
+
+  &__button {
+    position: absolute;
+    top: 0;
+  }
 
   &__heading {
     font-size: 1.4rem;
@@ -104,12 +162,14 @@ body {
 }
 
 .section-review {
+  width: 130rem;
   height: 100vh;
   margin-top: 10rem;
   background-position: top;
-  padding: 20rem;
-  position: relative;
+  //padding: 20rem;
+  //position: relative;
   background-size: cover;
+  position: fixed;
 
   &__heading {
     position: absolute;
@@ -128,6 +188,7 @@ body {
 }
 
 .section-book {
+  width: 130rem;
   height: 100vh;
   margin-top: 10rem;
   background-position: top;
@@ -170,6 +231,7 @@ body {
 }
 
 .section-footer {
+  width: 130rem;
   display: block;
   height: 80vh;
   background-position: top;

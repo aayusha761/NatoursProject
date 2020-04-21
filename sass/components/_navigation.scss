@@ -3,23 +3,24 @@
 .navigation {
 
   &__checkbox {
-    height: 4rem;
+    //height: 0.5rem;
     width: 7rem;
     background-color: white;
     position: fixed;
-    top: 6rem;
-    right: 3rem;
+    top: 7.5rem;
+    right: 5.7rem;
     z-index: 1000;
+    visibility: hidden;
   }
 
   &__button {
-    height: 7rem;
-    width: 7rem;
+    height: 3rem;
+    width: 3rem;
     color: white;
-    border-radius: 50%;
+    border-radius: 3px;
     position: fixed;
-    top: 8.5rem;
-    right: 4rem;
+    top: 8.6rem;
+    right: 8rem;
     z-index: 1010;
   }
 

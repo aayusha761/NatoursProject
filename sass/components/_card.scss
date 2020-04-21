@@ -4,6 +4,7 @@
   perspective: 150rem;
   -moz-perspective: 150rem;
   position: relative;
+  height: 54.5vh;
 
   //front-side image
   &__picture {
@@ -40,7 +41,7 @@
   &__side {
     border-radius: 3px;
     box-shadow: 0 1.5rem 4rem rgba($color-black, .15);
-    height: 50rem;
+    height: 35rem;
     color: #fff;
     transition: all .8s;
     top: 0;
@@ -51,46 +52,17 @@
 
     &--front {
       background-color: white;
-
-      &-1 {
-        position: absolute;
-        top: 0;
-        left: 0;
-      }
-
-      &-2 {
-        position: absolute;
-        left: 420px;
-      }
-
-      &-3 {
-        position: absolute;
-        left: 840px;
-      }
+      position: absolute;
+      top: 0;
+      bottom: 5px;
     }
 
     &--back {
-      //background-color: green;
       transform: rotateY(180deg);
-
-      &-1 {
-        position: absolute;
-        top: 0;
-        left: 0;
-        background-image: linear-gradient(to right bottom, $color-secondary-light, $color-secondary-dark);
-      }
-
-      &-2 {
-        background-image: linear-gradient(to right bottom, $color-secondary-light, $color-secondary-dark);
-        position: absolute;
-        left: 420px;
-      }
-
-      &-3 {
-        position: absolute;
-        background-image: linear-gradient(to right bottom, $color-secondary-light, $color-secondary-dark);
-        left: 840px;
-      }
+      position: absolute;
+      top: 0;
+      left: 0;
+      background-image: linear-gradient(to right bottom, $color-secondary-light, $color-secondary-dark);
     }
   }
 

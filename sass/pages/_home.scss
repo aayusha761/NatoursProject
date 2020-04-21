@@ -1,28 +1,10 @@
 @import "../abstracts/variables";
 
 .section-about {
-  //background-color: #f7f7f7;
+  width: 130rem;
   clip-path: polygon(0% 5%, 100% 0%, 100% 100%, 0% 100%);
   background-size: cover;
-  //background-color: white;
-  //background-color: orangered;
   margin-top: -20vh;
   padding: 100px;
   height: 100%;
-}
-
-.heading-secondary {
-  font-size: 2.5rem;
-  text-transform: uppercase;
-  font-weight: 700;
-  background-image: linear-gradient(to right, $color-primary-light, $color-primary-dark);
-  display: inline-block;
-  margin: 25px;
-  padding: 0 20px;
-  -webkit-background-clip: text;
-  color: transparent;
-  &:hover {
-    transform: skewX(2deg) skewY(2deg);
-    text-shadow: .5rem 1rem 2rem rgba(black, .2);
-  }
 }
