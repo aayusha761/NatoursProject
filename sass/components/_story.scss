@@ -1,5 +1,6 @@
 .story {
   width: 75%;
+  height: 200px;
   margin: 0 auto;
   border-radius: 3px;
   background-color: white;
@@ -9,19 +10,46 @@
 
   &__shape {
     margin-right: 3px;
-    width: 8rem;
-    height: 8rem;
+    width: 15rem;
+    height: 15rem;
     background-color: green;
     float: left;
-    -webkit-shape-outside: circle(50% at 50% 50%);
-    shape-outside: circle(50% at 50% 50%);
-    clip-path: circle(50% at 50% 50%);
-    background-image:
-            url('../../img/nat-4.jpg');
-    transform: skew(12deg);
+    -webkit-shape-outside: circle(30% at 50% 50%);
+    shape-outside: circle(30% at 50% 50%);
+    clip-path: circle(30% at 50% 50%);
+    transform: translateX(-3rem) skewX(12deg);; //don't use margin on floated elements, use transform
+    overflow: hidden; // this is in case clip path is not supported (Firefox) and images spill out of __shape
+
   }
 
-  &__text {
-    transform: skew(12deg);
+  &__img {
+    height: 100%;
+    transform: translateX(-4rem) scale(1.4);
+    transition: all .5s;
+    backface-visibility: hidden; // fix shape issue from transform
   }
+  &__caption {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 20%);
+    color: white;
+    text-transform: uppercase;
+    font-size: 1.7rem;
+    text-align: center;
+    opacity: 0;
+    transition: all .5s;
+    backface-visibility: hidden; //fix shake issue from transform
+  }
+
+  &:hover &__caption {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+
+  &:hover &__img {
+    transform: translateX(-4rem) scale(1);
+    filter: brightness(80%) blur(3px);
+  }
+
 }

@@ -9,10 +9,16 @@
   &__input {
     font-size: 1.5rem;
     font-family: inherit;
-    padding: 0.5rem 0.5rem;
-    border-radius: 3px;
-    border-bottom: 3px solid transparent;
-    display: inline-block;
+    color: inherit;
+    padding: 1.5rem 2rem;
+    border-radius: 2px;
+    background-color: rgba($color-white, 0.5);
+    border: none;
+    border-bottom: 3px solid transparent; // on focus border is created which shift second input
+    // this line allows for that space to be occupied when not focused also
+    width: 40%;
+    display: block;
+    transition: all 0.3s;
 
     &:focus {
       outline: none;
@@ -28,48 +34,64 @@
       opacity: 0;
       visibility: hidden;
     }
+    &::-webkit-input-placeholder { //Safari + Chrome
+      color: $color-gray-dark-2;
+    }
   }
 
   &__label {
-    font-size: 1.5rem;
-    font-family: inherit;
-    display: block;
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-left: 2rem; // align with input text which has this padding
+    margin-top: .7rem;
+    display: block; // can't use margin properties unless display is block
     transition: all .3s;
+    transform: translateY(-9rem);
+  }
+
+  &__input:placeholder-shown + &__label { //adjacent sibling (+), can also use general sibling (~)
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-4rem);
   }
 
   &__radio-group {
-    width: 20%;
+    //width: 20%;
     display: inline-block;
-    position: relative;
   }
+  &__radio-input {
+    display: none; }
 
   &__radio-label {
-    position: absolute;
-    top: 0;
-    margin-left: 10px;
-    //right: 2px;
+    font-size: 1.6rem;
+    cursor: pointer;
+    position: relative;
+    padding-left: 4rem;
   }
 
   &__radio-button {
-    position: absolute;
-    font-size: inherit;
-    border-radius: 20px;
-    top: -3px;
-    left: -7.5px;
-    border: 3px solid $color-primary;
-    display: inline-block;
-    outline: none;
-    width: 25px;
-    height: 25px;
+    height: 3rem;
+    width: 3rem;
+    border: 5px solid $color-primary;
+    border-radius: 50%;
+    display: inline-block;  //height and width only work on block elements
+    //position: absolute;
+    //left: 0;
+    //top: -.4rem;
 
     &::after {
-      content: "";
-      display: inline-block;
-      height: 1.5rem;
-      width: 1.5rem;
+      content: ""; // required for ::after
+      display: block; // required for ::after
+      height: 3rem;
+      width: 3rem;
       border-radius: 50%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
       background-color: $color-primary;
       opacity: 0;
+      transition: all 0.3s;
     }
   }
 
@@ -78,7 +100,7 @@
   }
 
   &__submit {
-    margin-top: 30px;
+    //margin-top: 10px;
     height: 3px;
   }
 }

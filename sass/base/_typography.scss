@@ -19,6 +19,7 @@ body {
     font-size: 6rem;
     font-weight: 400;
     letter-spacing: 3.5rem;
+
     animation-name: moveInLeft;
     animation-duration: 1s;
     animation-timing-function: ease-out;
@@ -35,10 +36,8 @@ body {
     display: block;
     font-size: 2rem;
     font-weight: 700;
-    letter-spacing: 1.74rem;
-    animation-name: moveInRight;
-    animation-duration: 1s;
-    animation-timing-function: ease-out;
+    letter-spacing: 1.75rem;
+    animation: moveInRight 2s ease-out; /* short hand notation to above */
 
     @include respond(phone) {
       font-size: 5rem;
@@ -48,35 +47,34 @@ body {
 }
 
 .heading-secondary {
-  font-size: 2.5rem;
+  font-size: 3.5rem;
   text-transform: uppercase;
   font-weight: 700;
   background-image: linear-gradient(to right, $color-primary-light, $color-primary-dark);
   display: inline-block;
   margin: 25px;
-  padding: 0 20px;
+  letter-spacing: .2rem;
   -webkit-background-clip: text;
   color: transparent;
 
   @include respond(tab-port) {
-    font-size: 2.5rem;
+    font-size: 3rem;
   }
 
   @include respond(phone) {
-    font-size: 2rem;
+    font-size: 2.5rem;
   }
 
   &:hover {
-    transform: skewX(2deg) skewY(2deg);
+    transform: skewX(2deg) skewY(2deg) scale(1.1);
     text-shadow: .5rem 1rem 2rem rgba(black, .2);
   }
 }
 
 .heading-tertiary {
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   font-weight: 700;
   text-transform: uppercase;
-  margin-bottom: 10px;
 
   @include respond(tab-port) {
     font-size: 1.4rem;
@@ -91,159 +89,5 @@ body {
 
   &:not(:last-child) {
     margin-bottom: 5rem;
-
-    @include respond(tab-port) {
-      margin-bottom: 5rem;
-    }
-    @include respond(phone) {
-      margin-bottom: 2rem;
-    }
-  }
-}
-
-.section-features {
-  background-image: linear-gradient(
-                  to right bottom,
-                  rgba(126,213,111,0.8),
-                  rgba(40,180,131,0.8)),
-  url(../../img/nat-4.jpg);
-  width: 130rem;
-  text-align: center;
-  background-position: top;
-  background-color: $color-primary;
-  padding: 20rem;
-
-  position: relative;
-  clip-path: polygon(0% 9%, 100% 0%, 100% 90%, 0% 100%);
-  background-size: cover;
-
-  &__heading {
-    font-size: 1.4rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    margin-bottom: 10px;
-  }
-
-  &__paragraph {
-    font-size: 1rem;
-    font-weight: 400;
-  }
-}
-
-
-.section-tours {
-  width: 130rem;
-  height: 80vh;
-  text-align: center;
-  background-color: $color-grid;
-  background-size: cover;
-  position: relative;
-
-  &__card {
-    height: 0;
-  }
-
-  &__button {
-    position: absolute;
-    top: 0;
-  }
-
-  &__heading {
-    font-size: 1.4rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    margin-bottom: 5px;
-  }
-
-  &__paragraph {
-    font-size: 1rem;
-    font-weight: 400;
-  }
-}
-
-.section-review {
-  width: 130rem;
-  height: 100vh;
-  margin-top: 10rem;
-  background-position: top;
-  //padding: 20rem;
-  //position: relative;
-  background-size: cover;
-  position: fixed;
-
-  &__heading {
-    position: absolute;
-    top: 5rem;
-    transform: translate(40%, -50%);
-    left: 10rem;
-    font-size: 2rem;
-    font-weight: 700;
-    text-transform: uppercase;
-  }
-
-  &__paragraph {
-    font-size: 1rem;
-    font-weight: 400;
-  }
-}
-
-.section-book {
-  width: 130rem;
-  height: 100vh;
-  margin-top: 10rem;
-  background-position: top;
-  position: relative;
-  background-size: cover;
-  background-image: linear-gradient(to right bottom, $color-primary-light, $color-primary-dark);
-}
-
-.book {
-  position: absolute;
-  width: 60%;
-  height: 75%;
-  margin: 0 auto;
-  left: 0;
-  top:0;
-  background-size: cover;
-  border-radius: 3px;
-  background-color: white;
-  padding: 4rem;
-  box-shadow: 0 3rem 6rem rgba(black,0.2);
-  transform: translate(35%, 20%);
-
-  background-image:
-          linear-gradient(110deg,
-          rgba(white, .9) 0%,
-          rgba(white, .9) 50%,
-          transparent 50%
-          //transparent 50%
-  ),
-  url("../../img/nat-10.jpg");
-
-
-  &__heading {
-    //align-items: flex-start;
-    font-size: 2rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    transform: translateX(-10px);
-  }
-}
-
-.section-footer {
-  width: 130rem;
-  display: block;
-  height: 80vh;
-  background-position: top;
-  padding: 20rem;
-  position: relative;
-  background-size: cover;
-  background-color: $color-grey-dark;
-
-  &__paragraph {
-    margin-top: 15px;
-    font-size: 1rem;
-    font-weight: 400;
-    color: white;
   }
 }

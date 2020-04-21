@@ -22,7 +22,7 @@
   &__close {
     &:link,
     &:visited {
-      color: $color-grey-dark;
+      color: $color-gray-dark;
       position: absolute;
       top: 2.5rem;
       right: 4rem;
@@ -95,7 +95,7 @@
 
       column-count: 2;
       column-gap: 4rem;
-      column-rule: 1px solid $color-grey-light;
+      column-rule: 1px solid $color-gray-light-1;
 
       -moz-hyphens: auto;
       -ms-hyphens: auto;
