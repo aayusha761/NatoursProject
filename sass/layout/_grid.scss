@@ -1,5 +1,6 @@
 @import "../abstracts/variables";
 @import "../abstracts/mixins";
+@import "../abstracts/mixins";
 
 .row {
   max-width: $grid-width;
@@ -8,19 +9,20 @@
 
   &:not(:last-child) {
     margin-bottom: $gutter-vertical;
+
     @include respond(tab-port) {
       margin-bottom: $gutter-vertical-small;
     }
   }
 
-  &:after {
-    content: "";
-    display: table;
-    clear: both;
+  @include respond(tab-port) {
+    max-width: 50rem;
+    //padding: 0 3rem;
   }
 
+  @include clearflix;
+
   [class^="col-"] {
-    background-color: $color-grid;
     float: left;
 
     &:not(:last-child) {
@@ -28,6 +30,7 @@
 
       @include respond(tab-port) {
         margin-right: 0;
+        margin-bottom: $gutter-vertical-small;
       }
     }
 

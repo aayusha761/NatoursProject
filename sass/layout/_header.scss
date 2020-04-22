@@ -1,17 +1,27 @@
 @import "../abstracts/mixins";
+@import "../abstracts/variables";
 
 .header {
-  height: 95vh;
-  width: 130rem;
+  height: 100vh;
   background-image: linear-gradient(
                   to right bottom,
                   rgba(126,213,111,0.8),
                   rgba(40,180,131,0.8)),
-  url(../../img/hero.jpg);
+  url(../../img/hero-small.jpg);
   background-size: cover;
   background-position: top;
-  clip-path: polygon(0% 0%, 100% 0%, 100% 70%, 0% 90%);
+  clip-path: polygon(0% 0%, 100% 0%, 100% 85%, 0% 100%);
   position: relative;
+
+  @media only screen and (min-resolution: 192dpi) and (min-width: 37.5em),
+  only screen and (-webkit-min-device-pixel-ratio: 2) and (min-width: 37.5em),
+  only screen and (min-width: 117em) {
+    background-image: linear-gradient(
+                    to right bottom,
+                    rgba($color-secondary-light,0.8),
+                    rgba($color-secondary-dark,0.8)),
+    url(../../img/hero.jpg);
+  }
 
   &__logo-box {
     position: absolute;

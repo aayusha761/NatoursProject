@@ -7,12 +7,15 @@
                   rgba(126,213,111,0.8),
                   rgba(40,180,131,0.8)),
   url(../../img/nat-4.jpg);
-  //width: 130rem;
   text-align: center;
   background-position: top;
   background-color: $color-primary;
   padding: 20rem 0;
   background-size: cover;
+
+  @include respond(tab-port) {
+    padding: 15rem 0;
+  }
 
   &__heading {
     font-size: 1.4rem;
@@ -35,6 +38,10 @@
   box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
   transition: all 0.3s;
 
+  @include respond(tab-port) {
+    padding: 2rem;
+  }
+
   &__icon {
     font-size: 6rem;
     margin-bottom: 0.5rem;
@@ -42,6 +49,10 @@
     background-image: linear-gradient(to right, #7ed56f, #28b485);
     -webkit-background-clip: text;
     color: transparent;
+
+    @include respond(tab-port) {
+      margin-bottom: 0;
+    }
   }
   &:hover {
     transform: translateY(-1rem) scale(1.1);
@@ -51,7 +62,12 @@
 
 .section-tours {
   text-align: center;
+  padding: 25rem 0 15rem 0;
   background-color: $color-gray-light-1;
+
+  @include respond(tab-port) {
+    padding: 20rem 0 10rem 0;
+  }
 
   &__button {
     position: absolute;
@@ -72,10 +88,12 @@
 }
 
 .section-review {
-  background-position: top;
   padding: 15rem 0;
   position: relative;
-  background-size: cover;
+
+  @include respond(tab-port) {
+    padding: 10rem 0;
+  }
 
   &__paragraph {
     font-size: 1rem;
@@ -84,48 +102,61 @@
 }
 
 .section-book {
+  padding: 15rem 0;
   background-image: linear-gradient(to right bottom, $color-primary-light, $color-primary-dark);
-}
 
-.book {
-  background-image:
-          linear-gradient(110deg,
-                  rgba(white, .9) 0%,
-                  rgba(white, .9) 50%,
-                  transparent 50%
-            //transparent 50%
-          ),
-          url("../../img/nat-10.jpg");
-
-
-  &__heading {
-    //align-items: flex-start;
-    font-size: 2rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    transform: translateX(-10px);
+  @include respond(tab-port) {
+    padding: 10rem 0;
   }
 }
 
-.section-footer {
-  display: block;
-  padding: 20rem;
-  position: relative;
+.book {
+  background-image:   linear-gradient(    105deg,
+          rgba($color-white, .9) 0%,
+          rgba($color-white, .9) 50%,
+          transparent 50%),
+  url(../../img/nat-10.jpg);
   background-size: cover;
-  background-color: #7ed56f;
+  border-radius: 3px;
+  box-shadow: 0 1.5rem 4rem rgba($color-black, 0.2);
 
-  &__paragraph {
-    margin-top: 15px;
-    font-size: 1rem;
-    font-weight: 400;
-    color: white;
+  @include respond(tab-land) {
+    background-image:   linear-gradient(    105deg,
+            rgba($color-white, .9) 0%,
+            rgba($color-white, .9) 65%,
+            transparent 65%),
+    url(../../img/nat-10.jpg);
+    background-size: cover;
+  }
+
+  @include respond(tab-port) {
+    background-image:   linear-gradient(to right,
+            rgba($color-white, .9) 0%,
+            rgba($color-white, .9) 100%),
+    url(../../img/nat-10.jpg);
+  }
+
+  &__form {
+    width: 50%;
+    padding: 6rem;
+
+    @include respond(tab-land) {
+      width: 65%;
+    }
+
+    @include respond(tab-port) {
+      width: 100%;
+    }
   }
 }
 
 .section-about {
-  //margin-top: -5vh; // shift block up to cover clip-path header wedge section
-  background-size: cover;
-  //padding: 25rem 0;
-  height: 100vh;
+  margin-top: -20vh; // shift block up to cover clip-path header wedge section
+  padding: 25rem 0;
+  //height: 100vh;
   background-color: $color-gray-light-1;
+
+  @include respond(tab-port) {
+    padding: 20rem 0;
+  }
 }

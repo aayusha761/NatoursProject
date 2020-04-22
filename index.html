@@ -7,7 +7,7 @@
         <link rel="stylesheet" href="sass/css/style.css">
         <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900" rel="stylesheet">
 
-        <link rel="stylesheet" href="sass/css/icon-font.css">
+<!--        <link rel="stylesheet" href="sass/css/icon-font.css">-->
         <link rel="shortcut icon" type="image/png" href="img/favicon.png">
         <title>Natours | Exciting Tours for adventurous people</title>
     </head>
@@ -68,9 +68,10 @@
                 </div>
                 <div class="col-1-of-2">
                     <div class="composition">
-                        <img src="img/nat-1-large.jpg" alt="Photo 1" class="composition__photo composition__photo--p1">
-                        <img src="img/nat-2-large.jpg" alt="Photo 2" class="composition__photo composition__photo--p2">
-                        <img src="img/nat-3-large.jpg" alt="Photo 3" class="composition__photo composition__photo--p3">
+
+                        <img src="img/nat-1-large.jpg" srcset="img/nat-1.jpg 300w, img/nat-1-large.jpg 1000w" sizes="(max-width: 56.25em) 20vw, (max-width: 37.5em) 30vw, 300px" alt="Photo 1" class="composition__photo composition__photo--p1">
+                        <img src="img/nat-2-large.jpg" srcset="img/nat-2.jpg 300w, img/nat-2-large.jpg 1000w" sizes="(max-width: 56.25em) 20vw, (max-width: 36.5em) 30vw, 300px" alt="Photo 2" class="composition__photo composition__photo--p2">
+                        <img src="img/nat-3-large.jpg" srcset="img/nat-3.jpg 300w, img/nat-3-large.jpg 1000w" sizes="(max-width: 56.25em) 20vw, (max-width: 36.5em) 30vw, 300px" alt="Photo 3" class="composition__photo composition__photo--p3">
                     </div>
                 </div>
             </div>
@@ -267,11 +268,13 @@
                 <div class="book">
                     <div class="book__form">
                         <form action="#" class="form">
+
                             <div class=" u-margin-bottom-medium">
                                 <h2 class="heading-secondary">
                                     Start booking now
                                 </h2>
                             </div>
+
                             <div class="form__group">
                                 <input type="text" class="form__input" placeholder="Full Name" id="name" required>
                                 <label for="name" class="form__label">Full name</label>
@@ -282,112 +285,85 @@
                                 <label for="email" class="form__label">Email address</label>
                             </div>
 
-                            <div class="form__radio-group u-margin-bottom-medium">
-                                <input type="radio" class="form__radio-input" id="small">
-                                <label for="small" class="form__radio-label">Small sized group</label>
-                                    <span class="form__radio-button"></span>
-                            </div>
+                            <div class="form__group u-margin-bottom-medium">
+                                <div class="form__radio-group">
+                                    <input type="radio" class="form__radio-input" id="small" name="size">
+                                    <label for="small" class="form__radio-label">
+                                        <span class="form__radio-button"></span>
+                                        Small tour group
+                                    </label>
+                                </div>
 
-                            <div class="form__radio-group u-margin-bottom-medium">
-                                <input type="radio" class="form__radio-input" id="large">
-                                <label for="large" class="form__radio-label">Large sized group</label>
-                                <span class="form__radio-button"></span>
+                                <div class="form__radio-group">
+                                    <input type="radio" class="form__radio-input" id="large" name="size">
+                                    <label for="large" class="form__radio-label">
+                                        <span class="form__radio-button"></span>
+                                        Large tour group
+                                    </label>
+                                </div>
                             </div>
 
                             <div class="form__group">
                                 <button class="btn btn--green">Next step &rarr;</button>
-                                <!-- can't use anchor element in form for submit, need to use button or input -->
+                                <!-- can't use anchor element in fomr for submit, need to use button or input -->
                             </div>
                         </form>
                     </div>
                 </div>
             </div>
         </section>
+        </main>
 
-        <footer class="section-footer">
-            <div class="header__logo-box">
-                <img src="img/logo-green-2x.png" alt="Logo" class="header__logo-1">
-            </div>
-            <div class="footer-menu">
-                <a href="#" class="btn-text-1">Company</a>
-                <a href="#" class="btn-text-1">Contact us</a>
-                <a href="#" class="btn-text-1">Careers</a>
-                <a href="#" class="btn-text-1">Privacy Policy</a>
-                <a href="#" class="btn-text-1">Terms</a>
-            </div>
+        <footer class="footer">
+            <div class="footer__logo-box">
 
-            <div class="footer-copyright">
-                <p class="section-footer__paragraph">
-                    Built by AAYUSH ARORA for ADVANCED CSS AND SASS Course. Copyright &copy; by AAYUSH ARORA. You are 100% allowed to use this webpage for both personal and commercial uses, but not to claim as your own design.A credit to the original author.Aayush Arora, is always of course appreciated.
-                </p>
+                <picture class="footer__logo">
+                    <source srcset="img/logo-green-small-1x.png 1x, img/logo-green-small-2x.png 2x"
+                            media="(max-width: 37.5em)">
+                    <img srcset="img/logo-green-1x.png 1x, img/logo-green-2x.png 2x" alt="Fulll logo"
+                         src="img/logo-green-2x.png"><!-- for older browsers -->
+                </picture>
+
+
+            </div>
+            <div class="row">
+                <div class="col-1-of-2">
+                    <div class="footer__navigation">
+                        <ul class="footer__list">
+                            <li class="footer__item"><a href="#" class="footer__link">Company</a></li>
+                            <li class="footer__item"><a href="#" class="footer__link">Contact Us</a></li>
+                            <li class="footer__item"><a href="#" class="footer__link">Carrers</a></li>
+                            <li class="footer__item"><a href="#" class="footer__link">Privacy policy</a></li>
+                            <li class="footer__item"><a href="#" class="footer__link">Terms</a></li>
+                        </ul>
+
+                    </div>
+                </div>
+                <div class="col-1-of-2">
+                    <p class="footer__copyright">
+                        Built by <a href="#" class="footer__link">Aayush Arora</a> for his online course.
+                        <a href="#" class="footer__link">Advanced CSS and SASS</a>. Copyright &copy; by Aayush Arora. You are 100% allowed
+                        to use this webpage for both personal and commercial use, but NOT to claim it as your own design. A credit to the original author,
+                        Jonas Schmedtmann, is of course highly appreciated!
+                    </p>
+                </div>
             </div>
         </footer>
-<!--        <footer class="section-footer">-->
-<!--            <div class="footer__logo-box">-->
-<!--                <picture class="footer__logo">-->
-<!--                    <source srcset="img/logo-green-small-1x.png 1x, img/logo-green-small-2x.png 2x"-->
-<!--                            media="(max-width: 37.5em)">-->
-<!--                    <img srcset="img/logo-green-1x.png 1x, img/logo-green-2x.png 2x" alt="Fulll logo"-->
-<!--                         src="img/logo-green-2x.png">&lt;!&ndash; for older browsers &ndash;&gt;-->
-<!--                </picture>-->
-<!--            </div>-->
-<!--            <div class="row">-->
-<!--                <div class="col-1-of-2">-->
-<!--                    <div class="footer__navigation">-->
-<!--                        <ul class="footer__list">-->
-<!--                            <li class="footer__item"><a href="#" class="footer__link">Company</a></li>-->
-<!--                            <li class="footer__item"><a href="#" class="footer__link">Contact Us</a></li>-->
-<!--                            <li class="footer__item"><a href="#" class="footer__link">Carrers</a></li>-->
-<!--                            <li class="footer__item"><a href="#" class="footer__link">Privacy policy</a></li>-->
-<!--                            <li class="footer__item"><a href="#" class="footer__link">Terms</a></li>-->
-<!--                        </ul>-->
 
-<!--                    </div>-->
-<!--                </div>-->
-<!--                <div class="col-1-of-2">-->
-<!--                    <p class="footer__copyright">-->
-<!--                        Built by <a href="#" class="footer__link">Jonas Schmedtmann</a> for his online course.-->
-<!--                        <a href="#" class="footer__link">Advanced CSS and SASS</a>. Copyright &copy; by Jonas Schmedtmann. You are 100% allowed-->
-<!--                        to use this webpage for both personal and commercial use, but NOT to claim it as your own design. A credit to the original author,-->
-<!--                        Jonas Schmedtmann, is of course highly appreciated!-->
-<!--                    </p>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </footer>-->
-
-        <section class="popup" id="popup">
+        <div class="popup" id="popup">
             <div class="popup__content">
-                <div class="popup__content-image">
-                    <div class="popup__content-image-1">
-                        <img src="img/nat-8.jpg" alt="Logo" class="header__popup-image">
-                    </div>
-                    <div class="popup__content-image-2">
-                        <img src="img/nat-9.jpg" alt="Logo" class="header__popup-image">
-                    </div>
+                <div class="popup__left">
+                    <img src="img/nat-8.jpg" alt="Tour photo" class="popup__img">
+                    <img src="img/nat-9.jpg" alt="Tour photo" class="popup__img">
                 </div>
-
-                <div class="popup__text">
+                <div class="popup__right">
                     <a href="#section-tours" class="popup__close">&times;</a>
-                    <div class="popup__text-heading">
-                        <h2 class="heading-secondary">
-                            Start Booking Now
-                        </h2>
-                    </div>
-
-                    <div class="popup__text-heading-sub">
-                        <h3 class="heading-tertiary">
-                            very important - please read the terms and conditions first
-                        </h3>
-                    </div>
-
-                    <p class="popup__text-paragraph">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. A molestiae officia totam velit voluptatibus. Assumenda distinctio, dolor eligendi, exercitationem fuga fugit nostrum, optio perferendis quia quo reiciendis sequi voluptatum. Quo? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus ad amet autem, consequatur deleniti dolor ducimus eveniet itaque iusto laborum omnis possimus vero voluptate. Dignissimos iure rem tenetur! Eius, id. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab accusamus ad, adipisci aspernatur consequuntur cum dignissimos ea earum et incidunt nemo non quaerat quasi quo rem repellendus reprehenderit saepe vitae? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur at dolor est, harum ipsam neque nihil nisi, perspiciatis quo repudiandae soluta sunt temporibus vero! Assumenda enim ipsam perferendis sint sit.
-                    </p>
-                    <div class="popup__text-button">
-                        <a href="#" class=" btn btn--green btn--animated">Book now</a>
-                    </div>
+                    <h2 class="heading-secondary u-margin-bottom-small">Start booking now</h2>
+                    <h3 class="heading-tertiary u-margin-bottom-small">Important &ndash; Please read these terms before booking</h3>
+                    <p class="popup__text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veniam vel nesciunt, obcaecati culpa soluta optio eos suscipit error omnis ducimus expedita, ad natus accusantium praesentium quidem sed? Consectetur explicabo, omnis voluptatum labore ipsam in cupiditate laboriosam qui repellat temporibus ullam vero quos doloremque dolores voluptatem ipsum cumque soluta commodi officiis illo recusandae quia! Iure illo alias ipsam quam odit laborum numquam, sit doloribus est! Fuga eos ea ullam dolores dicta tempora laborum beatae eligendi sit officiis fugiat, necessitatibus repellat labore.</p>
+                    <a href="#" class="btn btn--green">Book now</a>
                 </div>
             </div>
-        </section>
+        </div>
     </body>
-</html>
+</html>2
